@@ -7,6 +7,11 @@
  * places to add some flare.
  */
 
+/* Override default styles */
+.dark-mode {
+  --bg-color: #050909;
+}
+
 .notion {
   --notion-max-width: 720px;
   --notion-header-height: 54px;
@@ -22,7 +27,7 @@
 }
 
 .index-page {
-  --notion-max-width: 900px;
+  --notion-max-width: 1200px;
 }
 
 .notion-text {
@@ -400,6 +405,6 @@
   color: var(--fg-color-2);
 }
 
-.notion-equation.notion-equation-block{
+.notion-equation.notion-equation-block {
   align-items: center;
 }
