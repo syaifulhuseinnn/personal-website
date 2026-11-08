@@ -1,17 +1,31 @@
-import { Geist, Geist_Mono, Outfit, Oxanium } from "next/font/google"
+import type { Metadata } from "next"
+import { Cormorant_Garamond, Geist_Mono, Inter } from "next/font/google"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
-const oxaniumHeading = Oxanium({subsets:['latin'],variable:'--font-heading'});
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
 
-const outfit = Outfit({subsets:['latin'],variable:'--font-sans'})
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  variable: "--font-heading",
+  weight: ["400", "500", "600"],
+})
 
 const fontMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
 })
+
+export const metadata: Metadata = {
+  title: "Avery Lane Photography",
+  description:
+    "Portrait, editorial, and documentary photography by Avery Lane. Based in Portland, available for commissions.",
+}
 
 export default function RootLayout({
   children,
@@ -22,7 +36,12 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", outfit.variable, oxaniumHeading.variable)}
+      className={cn(
+        "antialiased font-sans",
+        fontMono.variable,
+        inter.variable,
+        cormorant.variable
+      )}
     >
       <body>
         <ThemeProvider>{children}</ThemeProvider>
