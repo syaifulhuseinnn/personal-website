@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
-const CONTACT_EMAIL = "hello@averylane.photo"
+const CONTACT_EMAIL = "hello@example.com"
 
 const work = [
   {
